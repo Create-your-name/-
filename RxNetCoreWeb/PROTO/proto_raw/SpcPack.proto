@@ -1,0 +1,606 @@
+ 
+//创建plan
+//POST /api/spc/create-plan
+message CreateSpcPlanReq {
+
+}
+
+message SaveEdcMeasurementSpecReq { 
+        CEdcMeasSpec Object=1; 
+}
+
+message QueryEdcMeasurementSpecsReq {  
+   string CatagoryId =1;
+   string Name =2;  
+}
+
+message QueryEdcChartsReq {  
+   string CatagoryId =1;
+   string Name =2;  
+}
+
+
+message SpcEdcDeleteObjectsTxnReq {  
+   string ClassName =1;  
+   string SpcObjects =2;  
+}
+
+message SpcEdcDeleteSingleObjectTxnReq {  
+   string ClassName =1;  
+  string SpcObject  =2;  
+}
+
+ message SPCEdcQueryChartsTxnReq {  
+   repeated string measurementSpecs =1;   
+}
+ message SpcEdcQueryChartsWithStatusTxnReq {  
+   repeated string measurementSpecs =1;  
+   int32 SearchDays =2; 
+}
+
+
+message SpcEdcFetchObjectsTxnReq {  
+   string ClassName =1;  
+   bool  IsDeepFetch =2;
+   string sWhere =3;  
+}
+
+message SpcEdcFetchSingleObjectTxnReq {  
+   string ClassName =1;  
+   bool  IsDeepFetch =2;
+   string sWhere =3;  
+}
+
+message SpcEdcSaveObjectsTxnReq {  
+   string ClassName =1;  
+   string SpcObjects =2;  
+}
+
+message SpcEdcSaveSingleObjectTxnReq {  
+   string ClassName =1;  
+   string  SpcObject  =2;  
+}
+  
+
+message SPCEdcQueryChartTxnReq {  
+   string Name =1;  
+}
+
+message SPCEdcQueryDataTxnReq {  
+    string edcPlan =1;  
+    string fromDate =2;  
+    int32 historicalPoints =3;  
+    string toDate =4;   
+    string measurementSpec =5;  
+    string unitId =6;  
+    string siteId =7;  
+    int32 numberOfGroups =8;  
+    string groupSize =9;  
+    string productName =10;  
+    string planId =11;  
+    string initialStepId =12;  
+    string batchId =13;  
+    string stageId =14;  
+    string areaId =15;  
+    string tag1 =16;  
+    string tag2 =17;  
+    string groupHistKey =18;
+    string measurementResource =19;
+    string userId =20;  
+    string processStep =21;  
+    string processResource =22;  
+    string lotId =23;  
+    string measurementStep =24;  
+} 
+
+message SpcEdcAnnotationTxnReq {  
+   string historySysId =1;  
+   string annotationCode =2;  
+   string reasonCode =3;  
+   string briefDescription =4;   
+   string detailDescription =5;  
+   string userId =6;  
+   string datetime =7;  
+   string statusFlag =8;  
+} 
+
+message SpcEdcQueryPointTxnReq {  
+   string dataSysId =1;  
+   string chart =2;  
+   string graph =3;  
+   string dataset =4;   
+   string annotationCode =5;  
+   string initialValue =6; 
+} 
+
+message SpcEdcCreateSpcRuleTxnReq {  
+   string name =1;  
+   string reason =2;  
+   int32 testCount =3; 
+   int32 outOf =4;  
+   string comparison =5; 
+   string withRespectTo =6; 
+   string value =7; 
+   string stdDevs =8; 
+   string datasetName =9; 
+   string intervalFrom =10; 
+   string intervalTo =11; 
+} 
+
+message SpcEdcUpdateSpcRuleTxnReq {  
+   string name =1;  
+   string reason =2;  
+   int32 testCount =3; 
+   int32 outOf =4;  
+   string comparison =5; 
+   string withRespectTo =6; 
+   string value =7; 
+   string stdDevs =8; 
+   string datasetName =9; 
+   string intervalFrom =10; 
+   string intervalTo =11; 
+} 
+
+message SpcEdcDeleteSpcRuleTxnReq {
+   string  name =1;
+}
+
+message SpcEdcExcludePointTxnReq  {
+   string  historySysId =1;  
+   string  briefDescription =2;  
+   string  detailDescription =3;  
+   bool  excludeFlag =4;
+}
+message SpcEdcFetchMeasSpecTxnReq {
+   string  name =1;
+}
+
+message SpcEdcListChartsTxnReq {
+   string  partition =1;  
+   string  measurementSpec =2;  
+   bool  startupCheck =3;  
+}
+
+message SpcEdcListPlansTxnReq {
+  
+} 
+message SpcEdcListSpcRulesTxnReq {
+  
+} 
+
+
+message SpcEdcFetchDataTxnReq {
+   string  dataCollSysId =1;
+}
+
+message DeleteMeasurementSpecReq {  
+   string Name =1;  
+     ClientInfo Client =2; 
+}
+
+message CreateSpcPlanResp {
+
+}
+ 
+message KeyValue {
+    string Key = 1;
+    string Value = 2; 
+}
+
+message CEdcSpecRpt {
+    string dataCollSysId =1; 
+    string edcPlanId =2;
+    string productName =3;
+    string planId =4;
+    string initialStepId =5;
+    string lotId =6;
+    string batchId =7;
+    string stageId =8;
+    string areaId =9; 
+    repeated CEdcSpecRes specResults =10;   
+}
+
+message CEdcSpecRes {
+    string measurementSpec =1; 
+    string measurementType =2;
+    string dataType =3;
+    string measurementStep =4;
+    string measurementResource =5;
+    string processStep =6;
+    string processResource =7;
+    string userId =8;
+    string specStatus =9; 
+    string upperSpecLimit =10;   
+    string lowerSpecLimit =11;   
+    repeated CEdcDataPoint datapoints =12;   
+   string  username=13;   
+}
+
+message CEdcRuleRpt {
+    string dataCollSysId =1; 
+    string edcPlanId =2;
+    string productName =3;
+    string planId =4;
+    string initialStepId =5;
+    string lotId =6;
+    string batchId =7;
+    string stageId =8;
+    string areaId =9; 
+    string tag1 =10;   
+    string tag2 =11;   
+    string groupHistKey =12; 
+    repeated CEdcRuleRes ruleResults =13;    
+}
+
+message SpcEdcMegaAnnotationTxnReq { 
+    string dataCollSysId =1; 
+    string edcPlanId =2;
+    string productName =3;
+    string planId =4;
+    string initialStepId =5;
+    string lotId =6;
+    string batchId =7;
+    string stageId =8;
+    string areaId =9; 
+    string tag1 =10;   
+    string tag2 =11;   
+    string groupHistKey =12; 
+    string clientId =13; 
+    repeated CEdcRuleRes ruleResults =14;    
+}
+
+message SpcEdcQueryContextTxnReq {   
+    string edcPlanId =1;
+    string productName =2;
+    string planId =3;
+    string initialStepId =4;
+    string lotId =5;
+    string batchId =6;
+    string stageId =7;
+    string areaId =8; 
+    string tag1 =9;   
+    string tag2 =10;    
+    string groupHistKey =11; 
+    bool  includeMeasurements   =12;    
+}
+
+message SpcEdcQueryPlanTxnReq {   
+    string planName =1; 
+} 
+
+message SpcEdcQuerySpcRuleTxnReq {   
+    string name =1; 
+}
+
+message CEdcRuleRes {
+   string  measurementSpec =1;  
+   string  measurementStep =2;  
+   string  measurementResource =3;  
+   string  processStep =4;  
+   string  processResource =5;  
+   string  userId =6;  
+   repeated CEdcChartRes  chartResults =7;   
+}
+
+message CEdcChartRes {
+   string  chartName =1;  
+   string  displayOption =2;  
+   string  chartStatus =3;  
+   string  errorInfo =4;  
+   repeated CEdcDataPtHistory  dataPointHistories =5;  
+} 
+
+message CEdcDataCollection { 
+    string dataCollSysId =1;
+    int32 dataCollTimeStamp = 2;  
+    string edcPlanId =3;
+    string productName =4;
+    string planId =5;
+    string initialStepId =6;
+    string lotId =7;
+    string batchId =8;
+    string stageId =9;
+    string areaId =10; 
+    string tag1 =11; 
+    string tag2 =12;
+    string groupHistKey =13;
+    bool done =14;
+    string returnDerived =15;
+    string clientId =16;
+    string datetime =17; 
+    repeated CEdcMeas measurements =18;
+}
+ 
+
+message CEdcDataPtHistory { 
+    string dataSysId =1;
+    string historySysId = 2;  
+    string chart =3;
+    string graph =4;
+    string dataset =5;
+    string initialValue =6;
+    string dataType =7;
+    bool isExcluded =8;
+    bool hasViolations =9;
+    bool hasComments =10;
+    bool isDataBoundary =11;
+    repeated CEdcAnnotation  annotations =12; 
+    string measurementSpec =13;
+    string dataCreateTime =14;
+   
+
+}
+ 
+message CEdcAnnotation { 
+    string annotationCode =1;
+    string reasonCode = 2;  
+    string briefDescription =3;
+    string detailDescription =4;
+    string dataset =5;
+    string userId =6;
+    string datetime =7;
+}
+ 
+ 
+
+message CEdcMeas { 
+    string measurementSpec =1;
+    string measurementType = 2;  
+    bool isDerived =3;
+    string dataType =4;
+    string measurementStep =5;
+    string measurementResource =6;
+    string procAessStep =7;
+    string processResource =8;
+    string userId =9;
+    repeated  string chartNames =10;
+    bool allowLimitOverride =11;
+    CEdcSpecLimit specLimits =12; 
+    repeated CEdcDataPoint datapoints =13;
+    bool overRideLimits =14;
+    string upperScreeningLimit =15;
+    string upperSpecLimit =16;
+    string target =17;
+    string lowerSpecLimit =18;
+    string lowerScreeningLimit =19;
+    bool autoExclude =20;
+}
+
+
+message CEdcSpecLimit { 
+    string measurementSysId =1;
+    string upperScreeningLimit = 2;  
+    string upperSpecLimit =3;
+    string target =4;
+    string lowerSpecLimit =5;
+    string lowerScreeningLimit =6; 
+    bool isExcluded =8; 
+}
+ 
+
+message CEdcDataPoint { 
+    string dataSysId =1;
+    bool modified = 2;  
+    string unitId =3;
+    string siteId =4;
+    string sampleId =5;
+    int32 sequence =6;
+    string value =7;
+    bool isExcluded =8;
+    bool isDataBoundary =9;
+    bool hasHistory =10;
+    repeated CEdcDataPtHistory dataPointHistories = 11;
+}
+ 
+
+message CEdcChart {
+    string Sysid = 1;
+    string name = 2;
+    string spcTemplate = 3;  
+    string measurementSpec = 45; 
+    string edcPlan = 5;
+    string planId = 6;
+    string productName = 7;
+    string stepId = 8;
+    string lotId = 9;
+    string equipment = 10;
+    string partition = 11; 
+    bool publishToName = 12; 
+    bool loadOnStartup = 13; 
+    string whenToDisplay = 14; 
+    int32  historicalHours = 15; 
+    int32  historicalPoints = 16;  
+    repeated  string rulesDatas = 17; 
+    repeated  CEdcChartParameter edcParameters = 18; 
+    repeated  CEdcSpcCustomRule spcCustomRules = 19 ; 
+    string description = 20;
+} 
+
+
+message CEdcChartStatus {
+CEdcChart chat =1; 
+bool OOC =2; 
+}
+message CEdcVrMinMax {
+    string Name = 1;
+    string Min = 2;
+    string Max = 3;
+    string Rule = 4 ;
+}
+
+message CEdcSpcCustomRule {
+    string name = 1;
+    string reason = 2;
+    int32 testCount = 3;
+    int32 outOf = 4; 
+    string comparison = 5;
+    string withRespectTo = 6;
+    string value = 7;
+    string stdDevs = 8;
+    string datasetName = 9;
+    string intervalFrom = 10;
+    string intervalTo = 11 ;
+    string Sysid = 12; 
+}
+
+message CEdcChartTemplate {
+    string Sysid = 1;
+    string Name = 2;
+    string Description = 3;
+    string spcTemplate = 4; 
+    repeated CEdcChartParameter defaultParameters = 5; 
+}
+
+message CEdcSpcSystemRule {
+    string Sysid = 1;
+    string name = 2;
+    string description = 3;
+    string detaildesc_en = 4;  
+    string detaildesc_zh = 5;  
+    int32 seq  =6;
+}
+ 
+message CEdcMeasSpec { 
+    string name = 1;
+    string description = 2;
+    string measurementType = 3;
+    string dataType = 4; 
+    string unit = 5;
+    bool isDerived = 6;
+    bool allowLimitOverride = 7;
+    string upperScreeningLimit = 8;
+    string upperSpecLimit = 9;
+    string target = 10;
+    string lowerSpecLimit = 11;
+    string lowerScreeningLimit = 12;  
+    bool autoExclude =13;
+    string prompt = 14; 
+    string collectionType = 15; 
+    int32 numberOfUnits = 16;  
+    int32 numberOfSites = 17;  
+    int32 numberOfSamples = 18;  
+    repeated string validset = 19;
+    string Sysid = 20;
+   // CEdcSamplingPlan samplingPlan =21;
+   // CEdcDerivation derivation =22;
+}
+
+message CEdcDataReply {
+    CEdcSpecRpt specReport = 1;
+    repeated CEdcMeas derivedMeasurements = 2;
+}
+
+message CEdcPlanVersion {
+    string Name = 1;
+    string Description = 2;
+    string operatorInstructions = 3;
+    string Owner = 4;
+    string Revision = 5;
+    string RevState = 6; 
+    repeated CEdcMeasSpec MeasurementSpecs = 7 ; 
+    string Sysid = 8 ;
+
+}
+
+message CEdcPlan {
+    string name = 1;
+    string description = 2; 
+    string owner = 3;
+    string revision = 4;
+    string revState = 5; 
+    repeated CEdcMeasSpec measurementSpecs = 6 ;  
+}
+
+message CEdcSamplingPlan {
+    string collectionType = 1;
+    string prompt = 2;
+    string operatorInstructions = 3;
+    int32 numberOfUnits = 4;
+    int32 numberOfSites = 5;
+    int32 numberOfSamples = 6; 
+    string Sysid = 7 ;
+}
+
+message CEdcChartParameter {
+    string sysid = 1;
+    string property = 2;
+    string value = 3; 
+}
+ 
+
+message CEdcDerivation {
+    string edcOperator = 1;
+    string operand1 = 2;
+    string operand2 = 3;
+    string Value = 4; 
+    string dataHandlingType = 5;
+    string Data1 = 6;
+    string Data2 = 7;
+    string limitSelection = 8;
+    string upperLimit = 9;
+    string lowerLimit = 10;
+    bool storeInDatabase = 11; 
+    string Sysid = 12 ;
+}
+
+message ClientInfo {
+    string UserName = 1;
+    string IPAddress = 2;
+    string MACInfo = 3; 
+    string LoginUser = 4; 
+}
+  
+//枚举消息类型
+enum ValidateType {
+    Limits = 0;  
+    ValueSet = 1;
+    NoVaidation = 2;
+}
+ 
+enum EnumLinkName {
+    defaultParameters= 0;  
+    overrideParameters= 1;  
+    spcCustomRule= 2;  
+    measurementSpecs=3;   
+    attributes= 4;  
+    versions= 5;  
+    rules= 6;  
+    objectUserSet= 7;   
+    validRangeCollection= 8;  
+    vrSet= 9;  
+    catagory= 10;  
+}
+
+
+enum EnumOpType {
+    Create= 0;  
+    Modify= 1;  
+    Delete= 2;   
+}
+
+enum DataType {
+    STRING = 0;  
+    INTEGER= 1;  
+    FLOAT= 2;   
+} 
+
+enum ConnectionFlag {
+    REQUIRED = 0;  
+    OPTIONAL= 1;  
+    DEFERABLE= 2;   
+}
+
+enum MeasurementType {
+    ENVIRONMENT = 0;  
+    EQUIPMENT= 1;  
+    LOT= 2;   
+    SITE= 2;   
+    WAFER= 2;   
+}
+
+enum ChartWhentoDisplay {
+    ALWAYS = 0;  
+    ONREQUEST= 1;  
+    RULEVIOLATION= 2;   
+    NEVER= 3;   
+}

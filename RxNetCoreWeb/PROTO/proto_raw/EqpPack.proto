@@ -1,0 +1,25 @@
+
+message QueryEqpReq {  
+	string eqpName =1;
+ }
+
+message QueryEqpPartsReq {  
+	string MOUDLE =1;
+	string PARTNO =2;
+	string PARTNAME =3;
+ }
+
+message SaveEqpPartsReq {  
+	string MOUDLE =1;
+	string PARTNO =2;
+	string PARTNAME =3;
+ }
+
+ message UpdateEqpPartsReq {  
+	string oMOUDLE =1;
+	string oPARTNO =2;
+	string oPARTNAME =3;
+	string nMOUDLE =4;
+	string nPARTNO =5;
+	string nPARTNAME =6;
+ }

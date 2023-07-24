@@ -1,0 +1,22 @@
+
+message GetAppSettingReq {
+    string name = 1;
+    int32 version = 2;  //0
+}
+
+message GetAppSettingResp {
+    int32 maxVersion = 1;
+    int32 version = 2;
+    string data = 3;
+}
+
+message SetAppSettingReq {
+    string name = 1;
+    string data = 2;
+}
+
+message SetAppSettingResp {
+    int32 maxVersion = 1;
+    int32 version = 2;
+    string data = 3;
+}

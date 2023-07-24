@@ -1,0 +1,55 @@
+//查询所有岗位
+message PostQueryReq{
+
+}
+
+message PostQueryResp{
+    repeated PostInfoPb allPosts = 1;
+}
+
+message PostInfoPb{
+    string postId = 1;
+    string postCode = 2;
+    string postName = 3;
+    string postSort = 4;
+    string status = 5;
+    string createTime = 6;
+    string createBy = 7;
+    string updateTime = 8;
+    string updateBy = 9;
+    string remark = 10;
+}
+
+//删除岗位
+message PostRemoveReq {
+    string postId = 1;
+}
+
+message PostRemoveResp {
+    
+}
+
+//创建岗位
+message PostCreateReq {
+    string postCode = 1;
+    string postName = 2;
+    string postSort = 3;
+    string status = 4;
+}
+
+message PostCreateResp {
+
+}
+
+//修改岗位
+message PostAlertReq {
+    string postId = 1;
+    string postCode = 2;
+    string postName = 3;
+    string postSort = 4;
+    string status = 5;
+}
+
+message PostAlertResp {
+
+}

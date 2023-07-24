@@ -1,0 +1,37 @@
+
+//新建角色菜单关联
+//POST /api/role_menu/create
+message RoleMenuCreateReq {
+	repeated string MENU_ID=1;
+	string ROLE_ID=2;
+}
+
+message RoleMenuCreateResp {
+    
+}
+
+//查询全部角色菜单关联
+//POST /api/role_menu/select
+// message RoleMenuSelectReq {
+
+// }
+
+// message RoleMenuSelectResp {
+// 	repeated RoleMenuInfoPb allRoleMenus = 1;
+// }
+
+message RoleMenuInfoPb{
+	string ID =1;
+	string MENU_ID=2;
+	string ROLE_ID=3;
+}
+
+//查询单个角色菜单关联
+//POST /api/role_menu/selectbyid
+message RoleMenuSelectByIDReq {
+	string ROLE_ID =1;
+}
+
+message RoleMenuSelectByIDResp {
+	repeated RoleMenuInfoPb singleRoleMenus = 1;
+}

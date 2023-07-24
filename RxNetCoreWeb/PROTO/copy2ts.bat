@@ -1,0 +1,1 @@
+xcopy /E /I tsout ..\SPCWeb\src

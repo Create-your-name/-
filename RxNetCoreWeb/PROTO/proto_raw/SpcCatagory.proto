@@ -1,0 +1,59 @@
+import "SpcPack.proto";
+
+message SpcCatagoryNode {
+    string title = 1;
+    string key = 2;
+    bool isLeaf = 3;
+    int32 cataLevel = 4;
+    repeated SpcCatagoryNode children = 5;
+}
+
+//POST /api/spc-catagory/get-nodes
+message GetSpcCatagoryNodesReq {
+
+}
+
+message GetSpcCatagoryNodesResp {
+    repeated SpcCatagoryNode nodes = 1;
+}
+
+//POST /api/spc-catagory/add-node
+message AddSpcCatagoryNodeReq {
+    string title = 1;
+    int32 cataLevel = 2;
+    bool isLeaf = 3;
+    string parent = 4;
+}
+
+message AddSpcCatagoryNodeResp {
+
+}
+
+//POST /api/spc-catagory/update-node
+message UpdateSpcCatagoryNodeReq {
+    string key = 1;
+    string title = 2;
+}
+
+message UpdateSpcCatagoryNodeResp {
+
+}
+
+//POST /api/spc-catagory/QueryCatagoryMSpec
+message QueryCatagoryMSpecReq {
+    string catagoryId = 1;
+}
+
+message QueryCatagoryMSpecResp {
+    repeated CEdcMeasSpec globalList = 1;
+    repeated CEdcMeasSpec cataList = 2;
+}
+
+//POST /api/spc-catagory/UpdateCatagoryMSpec
+message UpdateCatagoryMSpecReq {
+    string catagoryId = 1;
+    repeated string mspecList = 2;
+}
+
+message UpdateCatagoryMSpecResp {
+}

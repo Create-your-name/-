@@ -1,0 +1,4 @@
+
+message EqpQueryReq {
+	string EQPID =1;  
+ }

@@ -1,0 +1,77 @@
+
+
+message MenuCreateReq {
+    string MENU_NAME = 1;
+    string PARENT_ID = 2;
+    string ORDER_NUM = 3;
+    string URL = 4;
+    string TARGET = 5;
+    string MENU_TYPE = 6;
+    string VISIBLE = 7;
+    string IS_REFRESH = 8;
+    string PERMS = 9;
+    string ICON = 10;
+    string CREATE_BY = 11;
+    string REMARK = 12;
+}
+
+message MenuCreateResp {
+
+}
+
+message MenuSelectReq {
+    string MENU_NAME = 1;
+    string VISIBLE = 2;
+}
+
+message MenuSelectResp {
+    repeated MenuInfoPb allMenus = 1;
+}
+
+message MenuInfoPb {
+    string MENU_ID = 1;
+    string MENU_NAME = 2;
+    string PARENT_ID = 3;
+    string ORDER_NUM = 4;
+    string URL = 5;
+    string TARGET = 6;
+    string MENU_TYPE = 7;
+    string VISIBLE = 8;
+    string IS_REFRESH = 9;
+    string PERMS = 10;
+    string ICON = 11;
+    string CREATE_BY = 12;
+    string CREATE_TIME = 13;
+    string UPDATE_BY = 14;
+    string UPDATE_TIME = 15;
+    string REMARK = 16;
+}
+
+message MenuDeleteReq {
+    string Menu_ID = 1;
+
+}
+
+message MenuDeleteResp {
+
+}
+
+message MenuUpdateReq {
+    string MENU_NAME = 1;
+    string PARENT_ID = 2;
+    string ORDER_NUM = 3;
+    string URL = 4;
+    string TARGET = 5;
+    string MENU_TYPE = 6;
+    string VISIBLE = 7;
+    string IS_REFRESH = 8;
+    string PERMS = 9;
+    string ICON = 10;
+    string UPDATE_BY = 11;
+    string REMARK = 12;
+    string MENU_ID = 13;
+}
+
+message MenuUpdateResp {
+    
+}

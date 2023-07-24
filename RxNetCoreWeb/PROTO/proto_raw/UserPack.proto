@@ -1,0 +1,110 @@
+
+//登录
+//POST /api/user/login
+message UserLoginReq {
+    string account = 1;
+    string pwd = 2;
+}
+
+message UserLoginResp {
+    string authToken = 1;
+    string account = 2;
+    string role = 3;
+    string param = 4;
+}
+
+message UserRolePb {
+    string role = 1;
+    string param = 2;
+}
+
+//创建用户
+//POST /api/user/create
+message UserCreateReq {
+	string LOGIN_NAME=2;
+    string USER_NAME = 3;
+    string DEPT_ID = 4;
+	string USER_TYPE =5;	
+	string PHONENUMBER=6;
+	string PASSWORD=7;
+	string STATUS=8;
+	string REMARK=9;
+	string ROLE_KEY = 10;
+}
+
+message UserCreateResp {
+
+}
+
+//查询所有用户
+//POST /api/user/query
+message UserQueryReq {
+
+}
+
+message UserQueryResp {
+    repeated UserInfoPb allUsers = 1;
+}
+
+message UserInfoPb {
+    string USER_ID = 1;
+    string DEPT_ID = 2;
+	string LOGIN_NAME=3;
+	string USER_NAME=4;
+	string PHONENUMBER =5;
+	string STATUS=6;
+	string CREATE_TIME =7;
+	string USER_TYPE=8;
+	string REMARK=9;
+	string ROLE_KEY=10;
+}
+//删除角色
+//POST /api/user/remove
+message UserRemoveReq {
+    string USER_ID = 2;
+}
+
+message UserRemoveResp {
+    
+}
+//查询单条用户消息
+//POST /api/user/selectbyid
+message UserSelectByIDReq {
+    string USER_ID = 1;
+}
+message UserSelectByIDResp {
+    string User_ID = 1;
+	string LOGIN_NAME=2;
+    string USER_NAME = 3;
+    string DEPT_ID = 4;
+	string USER_TYPE =5;
+	string PHONENUMBER=6;
+	string STATUS=7;
+	string REMARK=8;
+}
+//修改密码
+//POST /api/user/resetPwd
+message UserResetPwdReq{
+	int32 USER_ID = 1;
+	string OLD_PASSWORD=2;
+	string NEW_PASSWORD=3;
+}
+message UserResetPwdResp{
+
+}
+//更新用户
+//POST /api/user/update
+message UserUpdateReq{
+	string USER_ID = 1;
+	string LOGIN_NAME=2;
+    string USER_NAME = 3;
+    string DEPT_ID = 4;
+	string USER_TYPE =5;	
+	string PHONENUMBER=6;
+	string STATUS=7;
+	string REMARK=8;
+	string ROLE_KEY=9;
+}
+message UserUpdateResp{
+	
+}

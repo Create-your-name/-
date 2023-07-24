@@ -1,0 +1,57 @@
+
+message SaveEqpParts {
+    string MOUDLE =1;
+    string EQPID =2;
+    string TYPES =3;
+    string LOCATION=4;
+    string PARTNO=5;
+    string LIFE=6;
+    string DESCRIPTION=7;
+    string DEPARTMENT=8;
+
+    int64 ERROR_SPEC=9;
+    int64 WARN_SPEC=10;
+    string PARTS_NAME=11;
+}
+ message UpdateEqpParts {  
+	string nMOUDLE =1;
+    string nEQPID =2;
+    string nTYPES =3;
+    string nLOCATION=4;
+    string nPARTNO=5;
+    string nLIFE=6;
+    string nDESCRIPTION=7;
+    string nDEPARTMENT=8;
+    
+    int64 nERROR_SPEC=9;
+    int64 nWARN_SPEC=10;
+    string nPARTS_NAME=11;
+ }
+
+message QueryBankFormReq{
+    string MOUDLE =1;
+    string EQPID =2;
+    string PARTNO=3;
+    string LOCATION=4;
+    string DEPARTMENT=5;
+    string STATUS=6;
+
+    int64 ERROR_SPEC=9;
+    int64 WARN_SPEC=10;
+    string PARTS_NAME=11;
+    int64 DATA=12;
+}
+
+message delete {
+    string PARTNO=3;
+}
+
+message ConfirmDATA{
+    string nDATA=1;
+    int64 nERROR_SPEC=2;
+    int64 nWARN_SPEC=3;
+    string nPARTS_NAME=4;
+    string nPARTNO=5;
+    string nMOUDLE =6;
+    string nTYPES =7;
+}

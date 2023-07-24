@@ -1,0 +1,17 @@
+{
+	"serverName": "spcService",
+	"sport": 35550,
+	"log": "file",
+	"logLevel": "trace",
+	"logtag": [
+		"net"
+	],
+	"datetimeOverriver": true,
+	"BC_modifiedDate": false,
+	//"oracle": "User Id=rxmesq2;Password=rxmesq2;Data Source=(DESCRIPTION = (ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST =10.163.76.7)(PORT = 1521))) (CONNECT_DATA = (SERVICE_NAME = RXDEV)));",  //q2
+	//"oracle": "User Id=rxmesdev;Password=rxmesdev;Data Source=(DESCRIPTION = (ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST =10.163.76.7)(PORT = 1521))) (CONNECT_DATA = (SERVICE_NAME = RXDEV)));",  //dev
+	"oracle": "User Id=rxmes;Password=rxmes;Data Source=(DESCRIPTION = (ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST =10.163.76.5)(PORT = 1521))) (CONNECT_DATA = (SERVICE_NAME = RXPROD)));",  //prod
+	//"oracle": "User Id=FWDEV;Password=fwdev;Data Source=(DESCRIPTION = (ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST =192.168.140.128)(PORT = 1521))) (CONNECT_DATA = (SERVICE_NAME = ORCLCDB)));",  //local
+	"emailUsername": "crmic_nc_MES_zy@rxgz.crmicro.com",
+	"emailPassword": "Rxmes@2023"
+}

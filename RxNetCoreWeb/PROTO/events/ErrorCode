@@ -1,0 +1,47 @@
+OK				=	0; //成功
+DefaultError	=	1; //默认错误
+PermissionDenied =  10; //权限不足
+CantOpenAddress	=	100; //无法连接地址
+
+BadRequest		=	1000; //错误的请求消息
+ServerException =	1001; //服务器错误
+TimeOut			=	1002; //超时
+
+RequestParaError =  1005; //请求参数异常
+ServerDataError	=	1006; //服务器数据错误
+
+BadDataFormat = 1016;   //提交数据格式有误
+InitDraftCantDrop = 1017; //初始草稿无法丢弃
+IdDuplicate = 1018; //ID已存在
+MissRequiredField = 1019; //缺少必填数据
+OperationFail = 1020; //操作失败
+
+
+UserAlreadyExist	=  1101;	//用户已存在
+AccountOrPwdError	=  1102;	//用户名或密码错
+PasswordError       = 1118; //密码错误
+UserNotExist        = 1121; //用户不存在
+
+PostAlreadyExist    = 1201; //岗位已存在
+PostNotExist        = 1221; //岗位不存在
+
+FormatNotRecog  =   1300;   //格式未识别
+FileNotExist =  1301;       //文件不存在
+EditNoConfirm = 1302;  //有未审核的编辑
+BadFileName = 1303;     //文件名格式错误
+BadMesResponse = 1304;  //MES系统响应失败
+DeviceNotExist = 1305;  //设备不存在
+FormatConflict = 1306;  //格式冲突
+FormatParseException = 1307;   //格式解析异常
+FormatHandlerNotFound = 1308;   //无法找到处理程序
+NotchNotExist = 1309;   //角度信息不存在
+UserConfirmSame = 1310; //二次确认不能是同一个用户
+UserConfirmNeed = 1311; //操作需要二次确认
+UserConfirmFail = 1312; //二次确认失败
+WaferMapNotFound = 1313;    //WaferMap未找到
+MissWaferID = 1314;     //缺少钢印号
+
+HasSubMenu = 1400;      //目录下还有子菜单
+MenuNotExist = 1401;    //菜单不存在
+
+GMAuthenticationFail = 5000; //认证失败

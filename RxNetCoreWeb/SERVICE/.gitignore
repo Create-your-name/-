@@ -1,0 +1,6 @@
+﻿.vs
+bin
+logs
+obj
+MESService.tar.gz
+MESService.csproj.user

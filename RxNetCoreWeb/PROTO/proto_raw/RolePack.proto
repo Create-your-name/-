@@ -1,0 +1,72 @@
+
+//新建角色
+//POST /api/role/create
+message RoleCreateReq {
+	string ROLE_NAME=1;
+	string ROLE_KEY=2;
+	string ROLE_SORT=3;
+	string STATUS=4;
+	string REMARK=5;
+}
+
+message RoleCreateResp {
+    
+}
+//查询全部角色消息
+//POST /api/role/select
+message RoleSelectReq {
+	string ROLE_NAME=1;
+	string ROLE_KEY=2;
+	string STATUS=3;
+	string STARTTIME=4;
+	string ENDTIME=5;
+}
+
+message RoleSelectResp {
+	repeated RoleInfoPb allRoles = 1;
+}
+message RoleInfoPb{
+	string ROLE_ID =1;
+	string ROLE_NAME=2;
+	string ROLE_KEY=3;
+	string ROLE_SORT=4;
+	string STATUS=5;
+	string CREATE_TIME=6;
+	string REMARK =7;
+}
+//查询单个角色消息
+//POST /api/role/selectrolebyid
+message RoleSelectRoleByIDReq {
+	string ROLE_ID =1;
+}
+
+message RoleSelectRoleByIDResp {
+	string ROLE_NAME=1;
+	string ROLE_KEY=2;
+	string ROLE_SORT=3;
+	string STATUS=4;
+	string REMARK=5;
+}
+
+//删除角色
+//POST /api/role/delete
+message RoleDeleteReq{
+	string ROLE_ID =1;
+	
+}
+message RoleDeleteResp{
+	
+}
+
+//POST /api/role/update
+message RoleUpdateReq{
+	string ROLE_ID =1;
+	string ROLE_NAME=2;
+	string ROLE_KEY=3;
+	string ROLE_SORT=4;
+	string STATUS=5;
+	string REMARK=6;
+}
+message RoleUpdateResp{
+	
+}

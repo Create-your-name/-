@@ -1,0 +1,77 @@
+
+message QueryPMFormReq {
+	string SYSID =1;  
+	string FORMNAME =2;
+	string EQPTYPE =3;
+ }
+
+message CheckList {
+	string CHKINDEX =1;
+	string ITEMNAME =2;
+	string ITEMTYPE =3;
+	string ITEMVALUE =4;
+}
+
+message SavePMFormReq {  
+    string SYSID =1;
+	string FORMNAME =2;
+	string EQPTYPE =3;
+	repeated CheckList checkList =4;
+	string USERID =5;
+}
+
+message QueryPMReq {  
+	string MOUDLE =1;
+	string EQPTYPE =2;
+	string PMNAME =3;
+	string PMFORMID =4;  
+	string EQPID =5;
+ }
+
+message SavePMReq {  
+    string SYSID =1;
+	string MOUDLE =2;
+	string EQPTYPE =3;
+	string PMNAME =4;  
+	string PMFORMID =5;
+	string QHOUR =6;
+	string TYPE =7;
+	string W1 =8;  
+	string W2 =9;
+	string W3 =10;
+	string W4 =11;
+	string W5 =12;  
+	string W6 =13;
+	string W7 =14;
+	string M1 =15;
+	string M2 =16;  
+	string M3 =17;
+	string PMSTATUS =18;
+	string LASTCOMPLETEDATE =19;
+	string PLANDATE =20;  
+	string FORCETRACKIN =21;
+	string HASF =22;
+	string CHOUR =23;
+	string CYCLE =24;  
+	string CYCLESTARTDATE = 25;  
+	string COMMENTS =26;  
+	string EQPID =27;
+	string USERID =28;
+}
+
+message QueryPMHisReq {  
+	string EQPTYPE =1;
+	string EQPID =2;
+	string PMFORMID =3;
+	string STARTDATE =4;
+	string ENDDATE =5;
+}
+
+message QueryPMChartPointReq {  
+	string EQPTYPE =1;
+	string EQPID =2;
+	string PMFORMID =3;
+	string STARTDATE =4;
+	string ENDDATE =5;
+	string CHKINDEX =6;
+}

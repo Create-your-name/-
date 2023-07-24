@@ -1,0 +1,37 @@
+
+message QueryQCReq {  
+	string MOUDLE =1;
+	string EQPID =2;
+	string QCNAME =3;
+	string EDCPLAN =4;  
+ }
+
+message SaveQCReq {  
+    string SYSID =1;
+	string MOUDLE =2;
+	string EQPID =3;
+	string QCNAME =4;  
+	string EDCPLAN =5;
+	string QHOUR =6;
+	string TYPE =7;
+	string W1 =8;  
+	string W2 =9;
+	string W3 =10;
+	string W4 =11;
+	string W5 =12;  
+	string W6 =13;
+	string W7 =14;
+	string M1 =15;
+	string M2 =16;  
+	string M3 =17;
+	string CSTATUS =18;
+	string LASTCOMPLETEDATE =19;
+	string PLANDATE =20;  
+	string FORCETRACKIN =21;
+	string HASF =22;
+	string CHOUR =23;
+	string CYCLE =24;
+	string CYCLESTARTDATE = 25;  
+	string COMMENTS =26;  
+	string USERID =27;
+}

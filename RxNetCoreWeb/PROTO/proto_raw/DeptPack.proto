@@ -1,0 +1,87 @@
+
+//新建部门
+//POST /api/dept/create
+message DeptCreateReq {
+	string LOGIN_NAME=1;
+	string PARENT_ID=2;
+	string DEPT_NAME=3;
+	string ORDER_NUM=4;
+	string LEADER=5;
+	string PHONE=6;
+	string EMAIL=7;
+	string STATUS=8;
+}
+
+message DeptCreateResp {
+    
+}
+//查询全部角色消息
+//POST /api/dept/select
+message DeptSelectReq {
+	string DEPT_NAME=1;
+	string STATUS=2;
+}
+
+message DeptSelectResp {
+	repeated DeptInfoPb allDepts = 1;
+}
+message DeptInfoPb{
+	string DEPT_NAME =1;
+	string ORDER_NUM=2;
+	string STATUS=3;
+	string CREATE_TIME=4;
+	string DEPT_ID=5;
+}
+//查询单个角色消息
+//POST /api/dept/selectdeptbyid
+message SelectDeptByIDReq {
+	string DEPT_ID =1;
+}
+
+message SelectDeptByIDResp {
+	string PARENT_ID=1;
+	string DEPT_NAME=2;
+	string ORDER_NUM=3;
+	string LEADER=4;
+	string PHONE=5;
+	string EMAIL=6;
+	string STATUS=7;
+}
+
+//删除角色
+//POST /api/dept/delete
+message DeptDeleteReq{
+	string DEPT_ID =1;
+	
+	
+}
+message DeptDeleteResp{
+	
+}
+
+//POST /api/dept/update
+message DeptUpdateReq{
+	string PARENT_ID=1;
+	string DEPT_NAME=2;
+	string ORDER_NUM=3;
+	string LEADER=4;
+	string PHONE=5;
+	string EMAIL=6;
+	string STATUS=7;
+	string DEPT_ID =8;
+	string LOGIN_NAME=9;
+}
+message DeptUpdateResp{
+	
+}
+
+//POST /api/dept/choosedept
+message ChooseDeptReq{
+
+}
+message ChooseDeptResp{
+	string DEPT_ID=1;
+	string ANCESTORS=2;
+	string DEPT_NAME=3;
+	string PARENT_ID=4;
+}

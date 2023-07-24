@@ -1,0 +1,53 @@
+
+message QueryBMFormReq {
+	string SYSID =1;  
+	string FORMNAME =2;
+	string EQPTYPE =3;
+	string BMTYPE =4;
+ }
+
+message BmCheckList {
+	string CHKINDEX =1;
+	string ITEMNAME =2;
+	string ITEMTYPE =3;
+	string ITEMVALUE =4;
+}
+
+message BmCheckListGroup {
+	string GROUPINDEX =1;
+	string GROUPNAME =2;
+	string CHECKLIST =3;
+}
+
+message SaveBMFormReq {  
+    string SYSID =1;
+	string FORMNAME =2;
+	string EQPTYPE =3;
+	repeated BmCheckList checkList =4;
+	repeated BmCheckListGroup groupList =5;
+	string BMTYPE =6;
+	string USERID =7;
+}
+
+message QueryPMBMHisReq {  
+    string TYPE =1;
+	string EQPTYPE =2;
+	string FORMNAME =3;
+}
+
+message QueryBMHisReq {  
+	string EQPTYPE =1;
+	string EQPID =2;
+	string BMTYPE =3;
+	string STARTDATE =4;
+	string ENDDATE =5;
+}
+
+message QueryBMChartPointReq {  
+	string EQPTYPE =1;
+	string EQPID =2;
+	string BMTYPE =3;
+	string STARTDATE =4;
+	string ENDDATE =5;
+	string CHKINDEX =6;
+}
